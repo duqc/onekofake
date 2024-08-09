@@ -468,8 +468,8 @@
         nekoPosX = Math.min(Math.max(16, nekoPosX), window.innerWidth - 16);
         nekoPosY = Math.min(Math.max(16, nekoPosY), window.innerHeight - 16);
 
-        nekoEl.style.left = `${nekoPosX - (16 * (Math.sin(frameCount) * 10))}px`;
-        nekoEl.style.top = `${nekoPosY - (16)}px`;
+        nekoEl.style.left = `${nekoPosX - (16 + (Math.sin(frameCount) * 10))}px`;
+        nekoEl.style.top = `${nekoPosY - (16 + Math.floor(Math.random()*20)}px`;
     }
 
     init();
