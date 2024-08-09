@@ -360,7 +360,7 @@
         if (!lastFrameTimestamp) {
             lastFrameTimestamp = timestamp;
         }
-        if (timestamp - lastFrameTimestamp > 100) {
+        if (timestamp - lastFrameTimestamp > 50) {
             lastFrameTimestamp = timestamp;
             frame();
         }
