@@ -362,7 +362,7 @@
         }
         if (timestamp - lastFrameTimestamp > 50) {
             lastFrameTimestamp = timestamp;
-            frame();
+            frame(timestamp);
         }
         window.requestAnimationFrame(onAnimatonFrame);
     }
@@ -433,7 +433,7 @@
         idleAnimationFrame += 1;
     }
 
-    function frame() {
+    function frame(timestamp) {
         frameCount += 1;
         const diffX = nekoPosX - mousePosX;
         const diffY = nekoPosY - mousePosY;
@@ -468,8 +468,8 @@
         nekoPosX = Math.min(Math.max(16, nekoPosX), window.innerWidth - 16);
         nekoPosY = Math.min(Math.max(16, nekoPosY), window.innerHeight - 16);
 
-        nekoEl.style.left = `${nekoPosX - 16}px`;
-        nekoEl.style.top = `${nekoPosY - 16}px`;
+        nekoEl.style.left = `${nekoPosX - (16 * (Math.sin(timestamp) * 10))}px`;
+        nekoEl.style.top = `${nekoPosY - (16)}px`;
     }
 
     init();
