@@ -462,14 +462,14 @@
         direction += diffX / distance < -0.5 ? "E" : "";
         setSprite(direction, frameCount);
 
-        nekoPosX -= (diffX / distance) * nekoSpeed;
-        nekoPosY -= (diffY / distance) * nekoSpeed;
+        nekoPosX -= ((diffX / distance) * nekoSpeed) + (Math.sin(frameCount) * 10);
+        nekoPosY -= ((diffY / distance) * nekoSpeed) + Math.floor(Math.random()*20); 
 
         nekoPosX = Math.min(Math.max(16, nekoPosX), window.innerWidth - 16);
         nekoPosY = Math.min(Math.max(16, nekoPosY), window.innerHeight - 16);
 
-        nekoEl.style.left = `${nekoPosX - (16 + (Math.sin(frameCount) * 10))}px`;
-        nekoEl.style.top = `${nekoPosY - (16 + Math.floor(Math.random()*20)}px`;
+        nekoEl.style.left = `${nekoPosX - 16}px`;
+        nekoEl.style.top = `${nekoPosY - 16}px`;
     }
 
     init();
