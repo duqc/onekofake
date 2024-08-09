@@ -54,7 +54,7 @@
 
             const nekoSpeed = Math.floor((Math.random() * 10) + 5);
             const spriteSets = {
-                idle: [[-3, -4]],
+                idle: [[-3, -3]],
                 alert: [[-7, -3]],
                 scratchSelf: [
                     [-5, 0],
