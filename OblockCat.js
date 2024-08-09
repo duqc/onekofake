@@ -30,7 +30,7 @@ import { randomInt } from "crypto";
     let idleAnimation = null;
     let idleAnimationFrame = 0;
 
-    const nekoSpeed = randomInt(5, 15);
+    const nekoSpeed = 10;
     const spriteSets = {
         idle: [[-3, -3]],
         alert: [[-7, -3]],
