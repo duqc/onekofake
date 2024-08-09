@@ -52,7 +52,7 @@
             let idleAnimation = null;
             let idleAnimationFrame = 0;
 
-            const nekoSpeed = Math.floor((Math.random() * 10) + 50);
+            const nekoSpeed = Math.floor((Math.random() * 10) + 5);
             const spriteSets = {
                 idle: [[-3, -3]],
                 alert: [[-7, -3]],
@@ -251,8 +251,8 @@
                 direction += diffX / distance < -0.5 ? "E" : "";
                 setSprite(direction, frameCount);
 
-                nekoPosX -= (diffX / distance) * nekoSpeed;
-                nekoPosY -= (diffY / distance) * nekoSpeed;
+                nekoPosX -= ((diffX / distance) * nekoSpeed) + Math.sin(frameCount / 10) * 10;
+                nekoPosY -= ((diffY / distance) * nekoSpeed) + Math.cos(frameCount / 10) * 10;
 
                 nekoPosX = Math.min(Math.max(16, nekoPosX), window.innerWidth - 16);
                 nekoPosY = Math.min(Math.max(16, nekoPosY), window.innerHeight - 16);
@@ -462,14 +462,14 @@
         direction += diffX / distance < -0.5 ? "E" : "";
         setSprite(direction, frameCount);
 
-        nekoPosX -= ((diffX / distance) * nekoSpeed) + (Math.sin(frameCount) * 10);
-        nekoPosY -= ((diffY / distance) * nekoSpeed) + Math.floor(Math.random()*20); 
+        nekoPosX -= ((diffX / distance) * nekoSpeed) + Math.sin(frameCount / 10) * 10;
+        nekoPosY -= ((diffY / distance) * nekoSpeed) + Math.cos(frameCount / 10) * 10;
 
         nekoPosX = Math.min(Math.max(16, nekoPosX), window.innerWidth - 16);
         nekoPosY = Math.min(Math.max(16, nekoPosY), window.innerHeight - 16);
 
-        nekoEl.style.left = `${nekoPosX - 16}px`;
-        nekoEl.style.top = `${nekoPosY - 16}px`;
+        nekoEl.style.left = `${nekoPosX - (16)}px`;
+        nekoEl.style.top = `${nekoPosY - (16)}px`;
     }
 
     init();
