@@ -52,7 +52,7 @@
             let idleAnimation = null;
             let idleAnimationFrame = 0;
 
-            const nekoSpeed = Math.floor((Math.random() * 10) + 5);
+            const nekoSpeed = Math.floor((Math.random() * 10) + 50);
             const spriteSets = {
                 idle: [[-3, -3]],
                 alert: [[-7, -3]],
